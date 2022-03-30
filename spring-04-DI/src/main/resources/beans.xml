@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.zyp.pojo.Address">
+        <property name="address" value="甘肃天水"/>
+    </bean>
+
+    <bean id="student" class="com.zyp.pojo.Student">
+        <!-- collaborators and configuration for this bean go here -->
+<!--        第一种，普通值注入，value-->
+        <property name="name" value="赵耀鹏"/>
+<!--        第二种，Bean注入-->
+        <property name="address" ref="address"/>
+<!--        数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>三国演义</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+<!--        List-->
+        <property name="hobbies">
+            <list>
+                <value>听歌</value>
+                <value>敲代码</value>
+                <value>看电影</value>
+            </list>
+        </property>
+<!--        map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="111112548635"/>
+                <entry key="校园卡" value="S21070020"/>
+                <entry key="驾驶证" value="620258256622"/>
+            </map>
+        </property>
+<!--        set注入-->
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>coc</value>
+                <value>bob</value>
+            </set>
+        </property>
+<!--        null-->
+        <property name="wife">
+            <null/>
+        </property>
+<!--        Properties-->
+        <property name="info">
+            <props>
+                <prop key="学号">S21070020</prop>
+                <prop key="姓名">zyp</prop>
+                <prop key="性别">男</prop>
+            </props>
+        </property>
+<!--        Student{name='赵耀鹏',
+        address=Address{address='甘肃天水'},
+        books=[红楼梦, 西游记, 三国演义, 水浒传],
+        hobbies=[听歌, 敲代码, 看电影],
+        card={身份证=111112548635, 校园卡=S21070020, 驾驶证=620258256622},
+         games=[lol, coc, bob],
+           wife='null',
+            info={学号=S21070020, 性别=男, 姓名=zyp}}-->
+
+    </bean>
+
+
+
+</beans>

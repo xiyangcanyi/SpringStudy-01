@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.zyp.pojo.User">
+        <!-- collaborators and configuration for this bean go here -->
+<!--        方法存在无参构造-->
+<!--        <property name="name" value="赵耀鹏"/>-->
+        <!--        方法存在没有无参构造，只有有参构造-->
+        <constructor-arg name="name" value="zyp"/>
+    </bean>
+    <bean id="userT" class="com.zyp.pojo.UserT">
+        <property name="name" value="zyp"/>
+    </bean>
+
+
+
+
+    <!-- more bean definitions go here -->
+
+</beans>
